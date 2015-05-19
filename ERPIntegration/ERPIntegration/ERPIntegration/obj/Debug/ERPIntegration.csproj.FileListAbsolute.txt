@@ -1,0 +1,12 @@
+c:\users\vaultgpsandbox\documents\visual studio 2012\Projects\ERPIntegration\ERPIntegration\bin\Debug\ERPIntegration.exe.config
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\bin\Debug\ERPIntegration.exe
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\bin\Debug\ERPIntegration.pdb
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\bin\Debug\Microsoft.Dynamics.GP.eConnect.Serialization.dll
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.csprojResolveAssemblyReference.cache
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.Form1.resources
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.loginForm.resources
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.Properties.Resources.resources
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.csproj.GenerateResource.Cache
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.exe
+C:\Users\VaultGPSandbox\Documents\Visual Studio 2012\Projects\ERPIntegration\ERPIntegration\obj\Debug\ERPIntegration.pdb
