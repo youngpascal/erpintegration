@@ -21,7 +21,7 @@ namespace ERPIntegration
         private string dtigpPassword = "";
         private string vaultUsername = "";
         private string vaultPassword = "";
-
+        private int formatOption = 0;
         //importCSV constructor
         public importCSV(string gpUser, string gpPass, string vaultUser, string vaultPass, string filePath)
         {
@@ -36,8 +36,15 @@ namespace ERPIntegration
             adsksql = new SqlConnection(vaultConnection);
         }
 
-    
+        public importCSV(string filePath, int option)
+        {
+            csvPath = filePath;
+            formatOption = option;
+        }
 
-       
+        public String getfilePath()
+        {
+            return csvPath;
+        }
     }
 }

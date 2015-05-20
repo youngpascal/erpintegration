@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using OfficeOpenXml;
 
 namespace ERPIntegration
 {
@@ -15,6 +16,7 @@ namespace ERPIntegration
     {
         private static string gpUser, gpPass, vaultUser, vaultPass = "";
         private importCSV import;
+        private importCSV format;
         private string filePath = "";
 
         public Form1()
@@ -30,12 +32,12 @@ namespace ERPIntegration
 
         private void button1_Click(object sender, EventArgs e)
         {   //Import multiple Items button
-            createCSVObject();
+            createCSVObject("import");
             import.processCSV("Parts");
             MessageBox.Show("Parts imported successfully");
         }
 
-        private void createCSVObject()
+        private void createCSVObject(string option)
         {   //Get CSV path and create importCSV object
             OpenFileDialog findCSV = new OpenFileDialog();
 
@@ -46,19 +48,41 @@ namespace ERPIntegration
                 filePath = findCSV.FileName;
             }
 
-            import = new importCSV(gpUser, gpPass, vaultUser, vaultPass, filePath);
+            if (option.Equals("import"))
+            {
+                import = new importCSV(gpUser, gpPass, vaultUser, vaultPass, filePath);
+            }
+            else if (option.Equals("format"))
+            {
+                int fOption = 0;
+
+                if (simpleFormat.Checked == true)
+                {
+                    fOption = 1;
+                }
+                else if (advancedFormat.Checked == true)
+                {
+                    fOption = 2;
+                }
+                else if (fOption == 0)
+                {
+                    MessageBox.Show("Select a proper format option");
+                }
+
+                format = new importCSV(filePath, fOption);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {   //Import one item
-            createCSVObject();
+            createCSVObject("import");
             import.processCSV("Part");
             MessageBox.Show("Part imported successfully");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {   //Import Bill of Materials
-            createCSVObject();
+            createCSVObject("import");
             import.processCSV("BOM");
             MessageBox.Show("BoM imported successfully");
         }
@@ -93,6 +117,13 @@ namespace ERPIntegration
                 ADSKVStatus.Text = "Connection failed.";
             }
             testADSK.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {   //Format a BoM
+            createCSVObject("format");
+            format.processCSV("format");
+            format.formatBoM();
         }
     }
 }

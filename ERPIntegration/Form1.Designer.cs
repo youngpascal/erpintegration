@@ -45,6 +45,8 @@
             this.ADSKVStatus = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.simpleFormat = new System.Windows.Forms.CheckBox();
+            this.advancedFormat = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -83,8 +85,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 48);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Run a compare";
+            this.button4.Text = "Format BoM";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox1
             // 
@@ -185,7 +188,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(430, 253);
+            this.shapeContainer1.Size = new System.Drawing.Size(429, 277);
             this.shapeContainer1.TabIndex = 15;
             this.shapeContainer1.TabStop = false;
             // 
@@ -193,15 +196,37 @@
             // 
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 1;
-            this.lineShape1.X2 = 431;
+            this.lineShape1.X2 = 444;
             this.lineShape1.Y1 = 123;
             this.lineShape1.Y2 = 123;
+            // 
+            // simpleFormat
+            // 
+            this.simpleFormat.AutoSize = true;
+            this.simpleFormat.Location = new System.Drawing.Point(221, 246);
+            this.simpleFormat.Name = "simpleFormat";
+            this.simpleFormat.Size = new System.Drawing.Size(92, 17);
+            this.simpleFormat.TabIndex = 16;
+            this.simpleFormat.Text = "Simple Format";
+            this.simpleFormat.UseVisualStyleBackColor = true;
+            // 
+            // advancedFormat
+            // 
+            this.advancedFormat.AutoSize = true;
+            this.advancedFormat.Location = new System.Drawing.Point(316, 246);
+            this.advancedFormat.Name = "advancedFormat";
+            this.advancedFormat.Size = new System.Drawing.Size(110, 17);
+            this.advancedFormat.TabIndex = 17;
+            this.advancedFormat.Text = "Advanced Format";
+            this.advancedFormat.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 253);
+            this.ClientSize = new System.Drawing.Size(429, 277);
+            this.Controls.Add(this.advancedFormat);
+            this.Controls.Add(this.simpleFormat);
             this.Controls.Add(this.ADSKVStatus);
             this.Controls.Add(this.DTIGPStatus);
             this.Controls.Add(this.button5);
@@ -245,6 +270,8 @@
         private System.Windows.Forms.Label ADSKVStatus;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.CheckBox simpleFormat;
+        private System.Windows.Forms.CheckBox advancedFormat;
     }
 }
 

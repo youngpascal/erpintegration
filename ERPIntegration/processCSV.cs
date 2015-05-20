@@ -97,7 +97,24 @@ namespace ERPIntegration
                 //Insert into active BoM
                 insertActiveBoMHeader();
                 insertActiveBoMLine();
-            }        
+            }
+            else if (option.Equals("format"))
+            {
+                foreach (part bomPart in parts)
+                {
+                    if (bomPart.detailID != "")
+                    {
+                        if (bomPart.parent.Equals("top"))
+                        {
+                            bom.Add(bomPart, "0");
+                        }
+                        else
+                        {
+                            bom.Add(bomPart, bomPart.detailID);
+                        }
+                    }
+                }
+            }
         }
 
         //Fix the formatting of the date for GP
@@ -202,13 +219,13 @@ namespace ERPIntegration
                     {                      
                         parts.Add(new part("top", fields[1], fields[2], fields[3],
                                                fields[4], fields[5], fields[6],
-                                               fields[7], fields[8], fields[9], date));
+                                               fields[7], fields[8], fields[9], date, fields[11]));
                     }
                     else
                     {
                         parts.Add(new part(fields[0], fields[1], fields[2], fields[3],
                                                fields[4], fields[5], fields[6],
-                                               fields[7], fields[8], fields[9], date));
+                                               fields[7], fields[8], fields[9], date, fields[11]));
                     }
                 }
                
@@ -230,13 +247,14 @@ namespace ERPIntegration
                           purchasing,
                           category,
                           effectiveDate,
-                          subcat;
+                          subcat,
+                          dwg;
             public int detailNum;
             
             public part(string par, string d, string p,
                         string q, string i, string u,
                         string desc, string r, string pur,
-                        string c, string e)
+                        string c, string e, string type)
             {
                 parent = par;
                 detailID = d;
@@ -249,6 +267,7 @@ namespace ERPIntegration
                 purchasing = pur;
                 category = c;
                 effectiveDate = e;
+                dwg = type;
 
                 if (d != "" && d != "-")
                     detailNum = Int32.Parse(d);
